@@ -40,6 +40,11 @@
     color: chartreuse;
 }
 
+.seno-button {
+    cursor: pointer;
+    color: pink;
+}
+
 .substraction-button {
     cursor: pointer;
     color: green;
