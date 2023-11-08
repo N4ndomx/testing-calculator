@@ -9,10 +9,10 @@ describe('Ui Addition - Component', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UiComponent ],
+      declarations: [UiComponent],
       imports: [FormsModule],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -22,22 +22,22 @@ describe('Ui Addition - Component', () => {
   });
 
   it('Should call addition method', () => {
-     // Arrange
-     let result = 0;
-     component.operator1 = 2;
-     component.operator2 = 2;
- 
-     // Act
-     component.addition();
-     result = component.result;
- 
-     // Assert
-     expect(result).toBe(4);
+    // Arrange
+    let result = 0;
+    component.operator1 = 2;
+    component.operator2 = 2;
+
+    // Act
+    component.addition();
+    result = component.result;
+
+    // Assert
+    expect(result).toBe(4);
   });
 
 
 
-  it('Should set operator1 model through ngModel', async() => {
+  it('Should set operator1 model through ngModel', async () => {
     // Arrange 
     await fixture.whenStable();
     fixture.detectChanges();
@@ -51,8 +51,8 @@ describe('Ui Addition - Component', () => {
     // Assert 
     expect(component.operator1).toEqual(3.1416);
   });
- 
-  it('Should set operator2 model through ngModel', async() => {
+
+  it('Should set operator2 model through ngModel', async () => {
     // Arrange 
     await fixture.whenStable();
     fixture.detectChanges();
@@ -80,24 +80,67 @@ describe('Ui Addition - Component', () => {
     // Assert
     expect(component.result).toBe(7.5);
 
-   });
+  });
 
   it('Should render sum in result div', () => {
     // Arrange
     component.operator1 = 5;
-    component.operator2 = 5;
- 
+    component.operator2 = 6;
+
     // Act
     component.addition();
     fixture.detectChanges();
-    
+
     let de = fixture.debugElement.query(By.css('.result'));
-    let el : HTMLElement = de.nativeElement;
+    let el: HTMLElement = de.nativeElement;
 
     // Assert
-    expect(el.innerText).toContain('10');
-     
+    expect(el.innerText).toContain('11');
+
   });
+
+  //TODO: Factorial 
+  it('Should call factorial method', () => {
+    // Arrange
+    let resultado = 0
+    component.operator1 = 4
+    // Act
+    component.factorial()
+    resultado = component.result
+    // Assert
+    expect(resultado).toBe(24)
+  });
+
+  it('should add operator1 when i click the factorial button ', () => {
+    // Arrange 
+    component.operator1 = 4;
+
+    let additionButton = fixture.debugElement.query(By.css('.factorial-button'));
+
+    // Act
+    additionButton.triggerEventHandler('click', null);
+
+    // Assert
+    expect(component.result).toBe(24);
+
+  });
+
+  it('Should render factorial in result div', () => {
+    // Arrange
+    component.operator1 = 4;
+
+    // Act
+    component.factorial();
+    fixture.detectChanges();
+
+    let de = fixture.debugElement.query(By.css('.result'));
+    let el: HTMLElement = de.nativeElement;
+
+    // Assert
+    expect(el.innerText).toContain('24');
+
+  });
+
 
 });
 
