@@ -184,6 +184,49 @@ describe('Ui Addition - Component', () => {
 
   });
 
+  //TODO: Seno
+  it('Should call seno method', () => {
+    // Arrange
+    let resultado = 0
+    component.operator1 = 30
+    // Act
+    component.seno()
+    resultado = component.result
+    // Assert
+    expect(resultado).toBe(0.49999999999999994)
+  });
+
+  it('should add operator1 when i click the seno button ', () => {
+    // Arrange 
+    component.operator1 = 30;
+
+    let additionButton = fixture.debugElement.query(By.css('.seno-button'));
+
+    // Act
+    additionButton.triggerEventHandler('click', null);
+
+    // Assert
+    expect(component.result).toBe(0.49999999999999994);
+
+  });
+
+  it('Should render seno in result div', () => {
+    // Arrange
+    component.operator1 = 30;
+
+    // Act
+    component.seno();
+    fixture.detectChanges();
+
+    let de = fixture.debugElement.query(By.css('.result'));
+    let el: HTMLElement = de.nativeElement;
+
+    // Assert
+    expect(el.innerText).toContain('0.49999999999999994');
+
+  });
+
+
 
 });
 
