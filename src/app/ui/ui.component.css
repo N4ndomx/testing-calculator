@@ -35,6 +35,11 @@
     color: red;
 }
 
+.radianes-button {
+    cursor: pointer;
+    color: chartreuse;
+}
+
 .substraction-button {
     cursor: pointer;
     color: green;
