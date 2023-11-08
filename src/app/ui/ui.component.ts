@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { addition } from "../addition/addition"
+import { factorial } from '../factorial/factorial';
 
 @Component({
   selector: 'app-ui',
@@ -25,6 +26,12 @@ export class UiComponent implements OnInit {
 
   substraction() {
     alert("substraction here !");
+  }
+
+  factorial() {
+    let myresult = 0
+    myresult = factorial(this.operator1)
+    this.result = myresult
   }
 
 }
