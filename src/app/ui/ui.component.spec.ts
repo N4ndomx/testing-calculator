@@ -142,5 +142,48 @@ describe('Ui Addition - Component', () => {
   });
 
 
+  //TODO: Radianes
+  it('Should call radianes method', () => {
+    // Arrange
+    let resultado = 0
+    component.operator1 = 45
+    // Act
+    component.radianes()
+    resultado = component.result
+    // Assert
+    expect(resultado).toBe(0.7853981633974483)
+  });
+
+  it('should add operator1 when i click the radianes button ', () => {
+    // Arrange 
+    component.operator1 = 45;
+
+    let additionButton = fixture.debugElement.query(By.css('.radianes-button'));
+
+    // Act
+    additionButton.triggerEventHandler('click', null);
+
+    // Assert
+    expect(component.result).toBe(0.7853981633974483);
+
+  });
+
+  it('Should render radianes in result div', () => {
+    // Arrange
+    component.operator1 = 45;
+
+    // Act
+    component.radianes();
+    fixture.detectChanges();
+
+    let de = fixture.debugElement.query(By.css('.result'));
+    let el: HTMLElement = de.nativeElement;
+
+    // Assert
+    expect(el.innerText).toContain('0.7853981633974483');
+
+  });
+
+
 });
 
