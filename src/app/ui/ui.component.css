@@ -45,6 +45,11 @@
     color: pink;
 }
 
+.coseno-button {
+    cursor: pointer;
+    color: darkviolet;
+}
+
 .substraction-button {
     cursor: pointer;
     color: green;
