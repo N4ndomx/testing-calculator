@@ -227,7 +227,7 @@ describe('Ui Addition - Component', () => {
   });
 
   //TODO: Coseno
-  xit('Should call coseno method', () => {
+  it('Should call coseno method', () => {
     // Arrange
     let resultado = 0
     component.operator1 = 30
@@ -238,7 +238,7 @@ describe('Ui Addition - Component', () => {
     expect(resultado).toBe(0.8660254037844387)
   });
 
-  xit('should add operator1 when i click the coseno button ', () => {
+  it('should add operator1 when i click the coseno button ', () => {
     // Arrange 
     component.operator1 = 30;
 
@@ -252,7 +252,7 @@ describe('Ui Addition - Component', () => {
 
   });
 
-  xit('Should render coseno in result div', () => {
+  it('Should render coseno in result div', () => {
     // Arrange
     component.operator1 = 30;
 
@@ -265,6 +265,48 @@ describe('Ui Addition - Component', () => {
 
     // Assert
     expect(el.innerText).toContain('0.8660254037844387');
+
+  });
+
+  //TODO: tangente
+  it('Should call tangente method', () => {
+    // Arrange
+    let resultado = 0
+    component.operator1 = 30
+    // Act
+    component.tangente()
+    resultado = component.result
+    // Assert
+    expect(resultado).toBeCloseTo(0.57735026919, 2);
+  });
+
+  it('should add operator1 when i click the tangente button ', () => {
+    // Arrange 
+    component.operator1 = 30;
+
+    let additionButton = fixture.debugElement.query(By.css('.tangente-button'));
+
+    // Act
+    additionButton.triggerEventHandler('click', null);
+
+    // Assert
+    expect(component.result).toBe(0.5773502691896257);
+
+  });
+
+  it('Should render tangente in result div', () => {
+    // Arrange
+    component.operator1 = 30;
+
+    // Act
+    component.tangente();
+    fixture.detectChanges();
+
+    let de = fixture.debugElement.query(By.css('.result'));
+    let el: HTMLElement = de.nativeElement;
+
+    // Assert
+    expect(el.innerText).toContain('0.5773502691896257');
 
   });
 
