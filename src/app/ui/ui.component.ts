@@ -3,6 +3,7 @@ import { addition } from "../addition/addition"
 import { factorial } from '../factorial/factorial';
 import { radianes } from '../radianes/radianes';
 import { seno } from '../seno/seno';
+import { coseno } from '../coseno/coseno';
 
 @Component({
   selector: 'app-ui',
@@ -46,6 +47,11 @@ export class UiComponent implements OnInit {
     myresult = seno(this.operator1)
     this.result = myresult
 
+  }
+  coseno() {
+    let myresult = 0
+    myresult = coseno(this.operator1)
+    this.result = myresult
   }
 
 }
