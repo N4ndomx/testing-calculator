@@ -4,6 +4,7 @@ import { factorial } from '../factorial/factorial';
 import { radianes } from '../radianes/radianes';
 import { seno } from '../seno/seno';
 import { coseno } from '../coseno/coseno';
+import { tangente } from '../tangente/tangente';
 
 @Component({
   selector: 'app-ui',
@@ -51,6 +52,11 @@ export class UiComponent implements OnInit {
   coseno() {
     let myresult = 0
     myresult = coseno(this.operator1)
+    this.result = myresult
+  }
+  tangente() {
+    let myresult = 0
+    myresult = tangente(this.operator1)
     this.result = myresult
   }
 
