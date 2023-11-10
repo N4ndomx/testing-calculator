@@ -9,10 +9,10 @@ describe('Ui Addition - Component', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UiComponent ],
+      declarations: [UiComponent],
       imports: [FormsModule],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -22,22 +22,22 @@ describe('Ui Addition - Component', () => {
   });
 
   it('Should call addition method', () => {
-     // Arrange
-     let result = 0;
-     component.operator1 = 2;
-     component.operator2 = 2;
- 
-     // Act
-     component.addition();
-     result = component.result;
- 
-     // Assert
-     expect(result).toBe(4);
+    // Arrange
+    let result = 0;
+    component.operator1 = 2;
+    component.operator2 = 2;
+
+    // Act
+    component.addition();
+    result = component.result;
+
+    // Assert
+    expect(result).toBe(4);
   });
 
 
 
-  it('Should set operator1 model through ngModel', async() => {
+  it('Should set operator1 model through ngModel', async () => {
     // Arrange 
     await fixture.whenStable();
     fixture.detectChanges();
@@ -51,8 +51,8 @@ describe('Ui Addition - Component', () => {
     // Assert 
     expect(component.operator1).toEqual(3.1416);
   });
- 
-  it('Should set operator2 model through ngModel', async() => {
+
+  it('Should set operator2 model through ngModel', async () => {
     // Arrange 
     await fixture.whenStable();
     fixture.detectChanges();
@@ -80,24 +80,238 @@ describe('Ui Addition - Component', () => {
     // Assert
     expect(component.result).toBe(7.5);
 
-   });
+  });
 
   it('Should render sum in result div', () => {
     // Arrange
     component.operator1 = 5;
-    component.operator2 = 5;
- 
+    component.operator2 = 6;
+
     // Act
     component.addition();
     fixture.detectChanges();
-    
+
     let de = fixture.debugElement.query(By.css('.result'));
-    let el : HTMLElement = de.nativeElement;
+    let el: HTMLElement = de.nativeElement;
 
     // Assert
-    expect(el.innerText).toContain('10');
-     
+    expect(el.innerText).toContain('11');
+
   });
+
+  //TODO: Factorial 
+  it('Should call factorial method', () => {
+    // Arrange
+    let resultado = 0
+    component.operator1 = 4
+    // Act
+    component.factorial()
+    resultado = component.result
+    // Assert
+    expect(resultado).toBe(24)
+  });
+
+  it('should add operator1 when i click the factorial button ', () => {
+    // Arrange 
+    component.operator1 = 4;
+
+    let additionButton = fixture.debugElement.query(By.css('.factorial-button'));
+
+    // Act
+    additionButton.triggerEventHandler('click', null);
+
+    // Assert
+    expect(component.result).toBe(24);
+
+  });
+
+  it('Should render factorial in result div', () => {
+    // Arrange
+    component.operator1 = 4;
+
+    // Act
+    component.factorial();
+    fixture.detectChanges();
+
+    let de = fixture.debugElement.query(By.css('.result'));
+    let el: HTMLElement = de.nativeElement;
+
+    // Assert
+    expect(el.innerText).toContain('24');
+
+  });
+
+
+  //TODO: Radianes
+  it('Should call radianes method', () => {
+    // Arrange
+    let resultado = 0
+    component.operator1 = 45
+    // Act
+    component.radianes()
+    resultado = component.result
+    // Assert
+    expect(resultado).toBe(0.7853981633974483)
+  });
+
+  it('should add operator1 when i click the radianes button ', () => {
+    // Arrange 
+    component.operator1 = 45;
+
+    let additionButton = fixture.debugElement.query(By.css('.radianes-button'));
+
+    // Act
+    additionButton.triggerEventHandler('click', null);
+
+    // Assert
+    expect(component.result).toBe(0.7853981633974483);
+
+  });
+
+  it('Should render radianes in result div', () => {
+    // Arrange
+    component.operator1 = 45;
+
+    // Act
+    component.radianes();
+    fixture.detectChanges();
+
+    let de = fixture.debugElement.query(By.css('.result'));
+    let el: HTMLElement = de.nativeElement;
+
+    // Assert
+    expect(el.innerText).toContain('0.7853981633974483');
+
+  });
+
+  //TODO: Seno
+  it('Should call seno method', () => {
+    // Arrange
+    let resultado = 0
+    component.operator1 = 30
+    // Act
+    component.seno()
+    resultado = component.result
+    // Assert
+    expect(resultado).toBe(0.49999999999999994)
+  });
+
+  it('should add operator1 when i click the seno button ', () => {
+    // Arrange 
+    component.operator1 = 30;
+
+    let additionButton = fixture.debugElement.query(By.css('.seno-button'));
+
+    // Act
+    additionButton.triggerEventHandler('click', null);
+
+    // Assert
+    expect(component.result).toBe(0.49999999999999994);
+
+  });
+
+  it('Should render seno in result div', () => {
+    // Arrange
+    component.operator1 = 30;
+
+    // Act
+    component.seno();
+    fixture.detectChanges();
+
+    let de = fixture.debugElement.query(By.css('.result'));
+    let el: HTMLElement = de.nativeElement;
+
+    // Assert
+    expect(el.innerText).toContain('0.49999999999999994');
+
+  });
+
+  //TODO: Coseno
+  it('Should call coseno method', () => {
+    // Arrange
+    let resultado = 0
+    component.operator1 = 30
+    // Act
+    component.coseno()
+    resultado = component.result
+    // Assert
+    expect(resultado).toBe(0.8660254037844387)
+  });
+
+  it('should add operator1 when i click the coseno button ', () => {
+    // Arrange 
+    component.operator1 = 30;
+
+    let additionButton = fixture.debugElement.query(By.css('.coseno-button'));
+
+    // Act
+    additionButton.triggerEventHandler('click', null);
+
+    // Assert
+    expect(component.result).toBe(0.8660254037844387);
+
+  });
+
+  it('Should render coseno in result div', () => {
+    // Arrange
+    component.operator1 = 30;
+
+    // Act
+    component.coseno();
+    fixture.detectChanges();
+
+    let de = fixture.debugElement.query(By.css('.result'));
+    let el: HTMLElement = de.nativeElement;
+
+    // Assert
+    expect(el.innerText).toContain('0.8660254037844387');
+
+  });
+
+  //TODO: tangente
+  it('Should call tangente method', () => {
+    // Arrange
+    let resultado = 0
+    component.operator1 = 30
+    // Act
+    component.tangente()
+    resultado = component.result
+    // Assert
+    expect(resultado).toBeCloseTo(0.57735026919, 2);
+  });
+
+  it('should add operator1 when i click the tangente button ', () => {
+    // Arrange 
+    component.operator1 = 30;
+
+    let additionButton = fixture.debugElement.query(By.css('.tangente-button'));
+
+    // Act
+    additionButton.triggerEventHandler('click', null);
+
+    // Assert
+    expect(component.result).toBe(0.5773502691896257);
+
+  });
+
+  it('Should render tangente in result div', () => {
+    // Arrange
+    component.operator1 = 30;
+
+    // Act
+    component.tangente();
+    fixture.detectChanges();
+
+    let de = fixture.debugElement.query(By.css('.result'));
+    let el: HTMLElement = de.nativeElement;
+
+    // Assert
+    expect(el.innerText).toContain('0.5773502691896257');
+
+  });
+
+
+
 
 });
 

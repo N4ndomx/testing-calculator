@@ -29,8 +29,33 @@
     cursor: pointer;
     color: blue;
 }
+
+.factorial-button {
+    cursor: pointer;
+    color: red;
+}
+
+.radianes-button {
+    cursor: pointer;
+    color: chartreuse;
+}
+
+.seno-button {
+    cursor: pointer;
+    color: pink;
+}
+
+.coseno-button {
+    cursor: pointer;
+    color: darkviolet;
+}
+
 .substraction-button {
     cursor: pointer;
     color: green;
 }
 
+.tangente-button {
+    cursor: pointer;
+    color: black;
+}

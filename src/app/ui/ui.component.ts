@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { addition } from "../addition/addition"
+import { factorial } from '../factorial/factorial';
+import { radianes } from '../radianes/radianes';
+import { seno } from '../seno/seno';
+import { coseno } from '../coseno/coseno';
+import { tangente } from '../tangente/tangente';
 
 @Component({
   selector: 'app-ui',
@@ -25,6 +30,34 @@ export class UiComponent implements OnInit {
 
   substraction() {
     alert("substraction here !");
+  }
+
+  factorial() {
+    let myresult = 0
+    myresult = factorial(this.operator1)
+    this.result = myresult
+  }
+
+  radianes() {
+    let myresult = 0
+    myresult = radianes(this.operator1)
+    this.result = myresult
+  }
+  seno() {
+    let myresult = 0
+    myresult = seno(this.operator1)
+    this.result = myresult
+
+  }
+  coseno() {
+    let myresult = 0
+    myresult = coseno(this.operator1)
+    this.result = myresult
+  }
+  tangente() {
+    let myresult = 0
+    myresult = tangente(this.operator1)
+    this.result = myresult
   }
 
 }
