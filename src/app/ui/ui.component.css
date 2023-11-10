@@ -1,4 +1,4 @@
-.calculator {
+/* .calculator {
     width: 150px;
     text-align: center;
     color: #999;
@@ -58,4 +58,67 @@
 .tangente-button {
     cursor: pointer;
     color: black;
+} */
+
+.calculator {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.form-control {
+    width: 80%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group-addon {
+    background-color: #e9e9e9;
+    border: 1px solid #ccc;
+}
+
+.addition-button,
+.substraction-button,
+.tangente-button,
+.coseno-button,
+.seno-button,
+.radianes-button,
+.factorial-button {
+    font-size: 24px;
+    color: #3498db;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.result {
+    display: block;
+    margin-top: 15px;
+    font-size: 50px;
+    font-weight: bold;
+    color: #27ae60;
+}
+
+/* Styles for the button grid */
+button {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3498db;
+    color: #fff;
 }

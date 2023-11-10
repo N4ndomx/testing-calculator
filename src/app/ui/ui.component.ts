@@ -28,10 +28,6 @@ export class UiComponent implements OnInit {
     this.result = myresult;
   }
 
-  substraction() {
-    alert("substraction here !");
-  }
-
   factorial() {
     let myresult = 0
     myresult = factorial(this.operator1)
